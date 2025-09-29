@@ -1,0 +1,1347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Case Study Tool (Partner's Version)</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="eyebrow-text">Partner Version</div>
+            <h1>AI Case Study Tool (Partner's Version)</h1>
+        </header>
+
+        <nav class="step-progress-nav">
+            <div class="step-progress-container">
+                <div class="step-progress-bar">
+                    <div class="step-progress-fill" id="stepProgressFill"></div>
+                </div>
+                <div class="step-markers">
+                    <div class="step-marker" data-step="intro">
+                        <div class="step-dot"></div>
+                        <div class="step-label">Start here</div>
+                    </div>
+                    <div class="step-marker" data-step="step1">
+                        <div class="step-dot"></div>
+                        <div class="step-label">Step 1: Which AI tool are you using?</div>
+                    </div>
+                    <div class="step-marker" data-step="step2">
+                        <div class="step-dot"></div>
+                        <div class="step-label">Step 2: Set up your AI tool</div>
+                    </div>
+                    <div class="step-marker" data-step="step3">
+                        <div class="step-dot"></div>
+                        <div class="step-label">Step 3: Choose your information format</div>
+                    </div>
+                    <div class="step-marker" data-step="step4">
+                        <div class="step-dot"></div>
+                        <div class="step-label">Step 4: Share the information</div>
+                    </div>
+                    <div class="step-marker" data-step="step5">
+                        <div class="step-dot"></div>
+                        <div class="step-label">Step 5: Check for details</div>
+                    </div>
+                    <div class="step-marker" data-step="step6">
+                        <div class="step-dot"></div>
+                        <div class="step-label">Step 6: Review your draft</div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <main class="content">
+            <!-- Intro Section -->
+            <section class="step-content active" id="intro">
+                <h2>How to get started</h2>
+                <p class="intro-copy">Use the step-by-step instructions within this tool to create a compelling case study for your own website. We've provided the prompts to train a generative AI tool of your choosing. You'll share information about your agency, the client you worked with, and the results—then use the prompts to turn the details into a comprehensive draft.</p>
+                <div class="disclaimer-box" style="background: #fef7fb; border: 2px solid #f8c2d4; border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0; box-shadow: 0 2px 8px rgba(248, 194, 212, 0.2);">
+                    <p style="margin: 0; color: #d47ba8; font-weight: 500; line-height: 1.6;"><strong>📋 Note:</strong> This tool may look similar to our AI Case Study Tool to create drafts for Shopify's site. They're quite similar! What's different is that this tool is designed for your own use. Shopify is not resourced to help with reviews and is not liable for any resulting content.</p>
+                </div>
+                <div class="content-area">
+
+                    <h3>Helpful guidelines</h3>
+                    <ul>
+                        <li><strong>Work with either ChatGPT or Claude.</strong> We tested the prompts provided in each step with these AI tools. For the best results, we recommend you use one of them.</li>
+                        <li><strong>Better inputs make for better outputs.</strong> The more detail you feed into your AI tool, the more useful and informative the case study will be. Lean on being overly detailed and descriptive. Don't skip any requested inputs.</li>
+                        <li><strong>Check (and double check!) the accuracy of the outputs.</strong> AI is a great tool, but it has a tendency to hallucinate, especially when it's not given enough information.</li>
+                        <li><strong>Put your human abilities to work.</strong> While the outputs of these prompts act as a strong starting point, they're not perfect. Still put a dedicated effort into reviewing your case study.</li>
+                    </ul>
+
+                </div>
+                <div class="navigation-buttons">
+                    <button class="btn btn-primary" onclick="goToStep('step1')">Get started</button>
+                </div>
+            </section>
+
+            <!-- Step 1: Select AI Tool -->
+            <section class="step-content" id="step1">
+                <div class="eyebrow-text">Step 1</div>
+                <h2>Which AI tool are you using?</h2>
+                <div class="content-area">
+                    
+                    <div class="path-selection">
+                        <button class="path-btn" onclick="selectToolAndProceed('pro')" style="position: relative;">
+                            <h3>✨ I'm using a Pro AI tool</h3>
+                            <p>ChatGPT Pro or Claude Pro</p>
+                                <div style="position: absolute; top: 10px; right: 10px; background-color: #f8c2d4; color: white; padding: 4px 12px; border-radius: 12px; font-size: 0.75rem; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px; box-shadow: 0 2px 4px rgba(0,0,0,0.2); z-index: 10;">Recommended</div>
+                        </button>
+                        <button class="path-btn" onclick="selectToolAndProceed('free')">
+                            <h3>🆓 I'm using a Free AI tool</h3>
+                            <p>GPT-3.5 or Claude.ai</p>
+                        </button>
+                    </div>
+
+                </div>
+                <div class="navigation-buttons">
+                    <button class="btn btn-secondary" onclick="goToStep('intro')">Back</button>
+                </div>
+            </section>
+
+            <!-- Step 2: Set up your AI tool -->
+            <section class="step-content" id="step2">
+                <div class="eyebrow-text">Step 2</div>
+                <h2>Set up your AI tool</h2>
+                <div class="content-area">
+                    <p>Choose your training path:</p>
+                    <div class="path-selection">
+                        <button class="path-btn" onclick="goToStep('step2a')">
+                            <h3>With a pro account</h3>
+                            <p>For users with premium AI tool access</p>
+                        </button>
+                        <button class="path-btn" onclick="goToStep('step2b')">
+                            <h3>With a free account</h3>
+                            <p>For users with basic AI tool access</p>
+                        </button>
+                    </div>
+                </div>
+                <div class="navigation-buttons">
+                    <button class="btn btn-secondary" onclick="goToStep('step1')">Back</button>
+                </div>
+            </section>
+
+            <!-- Step 2A: Pro Account -->
+            <section class="step-content" id="step2a">
+                <div class="eyebrow-text">Step 2</div>
+                <h2>Set up your AI tool</h2>
+                <h3>With a pro account</h3>
+                <div class="content-area">
+                    <p>To train your AI tool to write case studies, you'll complete the two actions below.</p>
+
+
+                    <div class="prompt-box">
+                        <div class="prompt-header">
+                            <div class="prompt-title">Action 1: Input this prompt into your AI tool</div>
+                            <button class="copy-btn">Copy to clipboard</button>
+                        </div>
+                        <div class="prompt-content"># Partner Case Study Development Guide
+
+This guide contains all information needed to continue writing and refining Partner case studies in the established format. These case studies highlight how partner agencies help clients succeed with their digital initiatives, with a specific structure and voice that has been refined through multiple iterations.
+
+## Writer Persona and Voice
+
+You should write as a former journalist with experience at Time and The New Yorker who now specializes in B2B and DTC commerce success stories. Your writing balances professional clarity with engaging narrative—maintaining credibility while avoiding corporate jargon. You transform technical implementations into business-focused stories that emphasize measurable results.
+
+## Case Study Structure
+
+### Title (15-20 words)
+Format: "How [Partner] Helped [Merchant] [Achieve Key Result] with their platform"
+- Include specific metrics when possible (e.g., "Increase Conversion by 40%")
+  - Choose the most impressive or relevant metric from the results
+  - Ensure the metric directly relates to business impact (conversion, revenue, etc.)
+- Avoid generic terms like "transform" or "revolutionize" without specifics
+- Consider including industry-specific terminology that signals relevance to target readers
+- Balance brevity with descriptiveness—aim for clarity over cleverness
+
+### Introduction (150-200 words)
+- Paragraph 1: Merchant background and brand context (2-3 sentences)
+  - Include founding year, industry position, and what makes them distinctive
+  - Focus on relevant aspects of their business model that connect to the case study
+  - Avoid generic industry statements that could apply to any company
+- Paragraph 2: Specific technical challenges they faced (2-3 sentences)
+  - Explain what wasn't working in their previous platform or approach
+  - Link technical issues directly to business limitations
+  - Be specific about which systems or processes were causing problems
+- Paragraph 3: Why they chose this specific partner (1-2 sentences)
+  - Highlight the partner's relevant expertise or unique approach
+  - Mention any specific capabilities that made them the right choice
+  - Keep this brief—more details will come in the Solution section
+- End with 3-4 bulleted results with specific metrics:
+  - Use the exact format shown below
+  - Each bullet should start with the metric (percentage or number)
+  - Each metric should be clearly described (what exactly improved)
+  - Order from most to least impressive/relevant metrics
+
+```
+Since partnering with [Partner] and implementing the platform, [Merchant] has achieved:
+- X% increase in [specific metric]
+- Y% improvement in [specific metric]
+- Z% growth in [specific metric]
+```
+
+### The Challenge (250-300 words)
+- Open with specific technical or operational pain points
+  - Begin with the most significant or limiting challenge
+  - Use concrete examples rather than abstract problems
+  - Connect directly to the client's particular business model
+- Include one direct quote that adds insight
+  - The quote should provide perspective, not just restate the problem
+  - Ideally from the client describing their pain points
+  - If no quotes are available, use the placeholder format specified
+- Develop 2-4 specific challenge areas in separate paragraphs
+  - Each paragraph should focus on a distinct challenge area
+  - Explain both the technical limitation and its business consequence
+  - Use varied paragraph openings and transitions between challenges
+- Connect technical limitations to business impact
+  - Show how each technical problem affected sales, operations, or growth
+  - Include specific examples when possible (e.g., "During peak season...")
+  - Make clear why these problems demanded a solution now
+- End by explaining why the platform was the right solution
+  - Mention specific the platform capabilities that address their unique challenges
+  - Keep this brief (1-2 sentences) as a transition to the Solution section
+  - Avoid generic platform praise—focus on relevant features for this case
+
+### The Solution (250-300 words)
+- Open with a sentence about the partner's overall approach
+  - Briefly frame how they tackled the client's challenges
+  - Set up the specific components that will follow
+  - Avoid generic statements about "strategic solutions" or "custom approaches"
+- Detail specific implementations, not general approaches
+  - Name actual features, integrations, or customizations built
+  - Include relevant technical details without becoming overly technical
+  - Specify which the platform tools or apps were utilized and how
+- Break into distinct components with clear explanations
+  - Dedicate separate paragraphs to different aspects of the solution (e.g., one for ERP integration, another for mobile optimization)
+  - You don't need subheadings or bullet points within this section
+  - Each paragraph should focus on a distinct aspect with specific details about what was built or configured, not just general strategies
+- Include 1 quote about the implementation approach
+  - Ideally from the partner explaining their thinking or approach
+  - Position the quote where it best supports a key solution component
+  - Ensure it adds insight rather than just describing what was done
+- Connect technical solutions to business benefits
+  - For each implementation, explain how it addressed a specific challenge
+  - Show the "so what"—why this solution matters for business outcomes
+  - Create clear links between the challenges identified earlier and how they were solved
+
+### The Results (150-200 words)
+- Open with specific metrics and their business impact
+  - Lead with the most impressive or relevant metric
+  - Avoid generic phrases like "The impact was significant" or "The results speak for themselves"
+  - Connect metrics directly to the solutions implemented
+- Organize results in order of importance
+  - Group related metrics together in single sentences when appropriate
+  - Ensure each metric clearly connects to business value, not just technical improvement
+  - Use precise numbers with consistent formatting (e.g., always use % symbol)
+- Include a quote about results or ongoing partnership
+  - Choose a quote that reflects satisfaction or future outlook
+  - Position where it best supports the narrative, usually after key metrics
+  - Ensure it adds substance rather than generic praise
+- Briefly mention future plans
+  - 1-2 sentences about next steps or ongoing initiatives
+  - Focus on how the foundation built will support future growth
+  - Be specific about planned enhancements or expansions
+- End with a concise statement about long-term impact
+  - Connect back to the client's brand identity or mission
+  - Show how the solution positions them for sustained success
+  - Avoid clichés about "revolutionizing" their business
+  - Make the final sentence memorable and forward-looking
+
+## Style Requirements
+
+1. **Professional but conversational tone**
+   - Not academic or overly formal
+   - Not marketing fluff or corporate jargon
+
+2. **Paragraph Structure**
+   - Keep paragraphs short (3-4 sentences maximum)
+   - Vary sentence structure throughout
+   - Avoid beginning consecutive paragraphs with the same pattern
+
+3. **Section Headers**
+   - Create unique headers related to the client's industry or specific challenge
+   - Examples:
+     - "The Challenge: When Technical Limitations Undermine Trust"
+     - "The Solution: Building a Digital Platform Worthy of a Century-Old Legacy"
+     - "The Results: From Friction to Flawless Customer Experience"
+
+4. **Language Patterns to Avoid**
+   - "Leverage" (use "use," "employ," or "implement" instead)
+   - "Utilize" (use "use")
+   - "Robust" (specify what makes it strong)
+   - "Solution" as a standalone term (be specific)
+   - "It's not only X, but also Y" (overused construction)
+   - "It didn't just X, it did Y" (overused construction)
+   - Any marketing superlatives without specifics
+   - Rhetorical questions in headers or body text
+   - Overly technical language
+   - Referring to the client as "the client" (use "brand," "business," or "organization" instead)
+
+5. **Voice and Framing**
+   - Write in third person except for direct quotes
+   - Use active voice consistently
+   - Connect technical features directly to business outcomes
+   - Use concrete language rather than abstractions
+   - Present metrics precisely (e.g., "16% increase" not "significant improvement")
+
+## Quote Handling
+
+If quotes aren't provided, use placeholder text formatted as:
+```
+[QUOTE NEEDED: Brief description of what this quote should address]
+```
+
+Similarly, if metrics aren't available:
+```
+[STAT NEEDED: Description of the metric type]
+```
+
+## Learning from Example Case Studies
+
+### Analyzing Reference Materials
+Reference materials are example case studies provided in the artifact document. If you do not receive the artifact document alongside this prompt, say "Thank you for giving me this context. Now, please provide the artifact document."
+
+- **Review all provided examples thoroughly**
+  - Read each example case study completely before beginning analysis
+  - Note how different industries and challenges are handled
+  - Pay attention to transitions between sections and paragraphs
+  - Observe how quotes are positioned to support key points
+- **Identify voice and tone patterns**
+  - Notice the professional but accessible language
+  - Mark sections that effectively explain technical concepts without jargon
+  - Note how the writing maintains authority without becoming corporate or stiff
+  - Observe how sentence structure varies while maintaining consistent voice
+- **Study structural elements**
+  - Analyze paragraph length and construction across different sections
+  - Note how introductions establish context efficiently
+  - Observe how challenges are connected to business implications
+  - See how solution components are organized logically
+
+## Your Task
+Use this guide to continue developing Partner case studies with the established format, voice, and approach. Each new case study should maintain this consistent structure while adapting to the specific client's industry, challenges, and results.
+
+Next, I'm going to give you information about a new partner and client that we'd like to write a new case study about. Use the relevant information throughout the case study as you see fit to match the voice, tone, style, and formatting of the examples. Do not include any information from the examples in this draft, and do not pull anything from the web. Also do not edit the provided quotes, and instead use them directly.
+
+After taking in this information, you can get to work writing a draft that matches the voice, tone, style, and formatting of the examples, but uses the information provided on the new customer.
+
+Once you're ready, say "My training is now complete! I'm ready to help you draft a new case study. Remember: The more specific information you share, the better the draft will be!
+
+You can input that information now."</div>
+                    </div>
+
+                    <div style="background: #f8f9fa; border: 1px solid #e9ecef; border-radius: 8px; padding: 2rem; margin: 1.5rem 0;">
+                        <div class="prompt-title">Action 2: Attach this artifact doc into your AI tool</div>
+                        <a href="https://content.shopify.com/i/Id7lDIbYsjtHKter3tOCeXyND1suM1H7alZrBbKZZ0VYOybXw8LJCDPeTseHPGYFFokOMsKaiOeBPLUSSIGNiTE5___8OObWBtfuxH18s1I8uH3V2yFdUcHjnKqZYQezVINgUFJkC" target="_blank" style="display: inline-block; background-color: #f8c2d4; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 1rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                            📄 Download artifact document
+                        </a>
+                    </div>
+
+                </div>
+                <div class="navigation-buttons">
+                    <button class="btn btn-secondary" onclick="goToStep('step1')">Back</button>
+                    <button class="btn btn-primary" onclick="goToStep('step3')">Next: Step 3</button>
+                </div>
+            </section>
+
+            <!-- Step 2B: Free Account -->
+            <section class="step-content" id="step2b">
+                <div class="eyebrow-text">Step 2</div>
+                <h2>Set up your AI tool</h2>
+                <h3>With a free account</h3>
+                <div class="content-area">
+                    <p>Without a pro version of ChatGPT or Claude, you'll need to manually train the model. This is straightforward, though it takes a few steps. Copy and paste each training prompt into your tool, pressing <strong>enter</strong> after each prompt.</p>
+                    
+
+
+                    <div class="prompt-box">
+                        <div class="prompt-header">
+                            <div class="prompt-title">Action 1: Enter the first training prompt</div>
+                            <button class="copy-btn">Copy to clipboard</button>
+                        </div>
+                        <div class="prompt-content"># Partner Case Study Development Guide
+
+This guide contains all information needed to continue writing and refining Partner case studies in the established format. These case studies highlight how partner agencies help clients succeed with their digital initiatives, with a specific structure and voice that has been refined through multiple iterations.
+
+## Writer Persona and Voice
+
+You should write as a former journalist with experience at Time and The New Yorker who now specializes in B2B and DTC commerce success stories. Your writing balances professional clarity with engaging narrative—maintaining credibility while avoiding corporate jargon. You transform technical implementations into business-focused stories that emphasize measurable results.
+
+## Case Study Structure
+
+### Title (15-20 words)
+Format: "How [Partner] Helped [Merchant] [Achieve Key Result] with their platform"
+- Include specific metrics when possible (e.g., "Increase Conversion by 40%")
+  - Choose the most impressive or relevant metric from the results
+  - Ensure the metric directly relates to business impact (conversion, revenue, etc.)
+- Avoid generic terms like "transform" or "revolutionize" without specifics
+- Consider including industry-specific terminology that signals relevance to target readers
+- Balance brevity with descriptiveness—aim for clarity over cleverness
+
+### Introduction (150-200 words)
+- Paragraph 1: Merchant background and brand context (2-3 sentences)
+  - Include founding year, industry position, and what makes them distinctive
+  - Focus on relevant aspects of their business model that connect to the case study
+  - Avoid generic industry statements that could apply to any company
+- Paragraph 2: Specific technical challenges they faced (2-3 sentences)
+  - Explain what wasn't working in their previous platform or approach
+  - Link technical issues directly to business limitations
+  - Be specific about which systems or processes were causing problems
+- Paragraph 3: Why they chose this specific partner (1-2 sentences)
+  - Highlight the partner's relevant expertise or unique approach
+  - Mention any specific capabilities that made them the right choice
+  - Keep this brief—more details will come in the Solution section
+- End with 3-4 bulleted results with specific metrics:
+  - Use the exact format shown below
+  - Each bullet should start with the metric (percentage or number)
+  - Each metric should be clearly described (what exactly improved)
+  - Order from most to least impressive/relevant metrics
+
+```
+Since partnering with [Partner] and implementing the platform, [Merchant] has achieved:
+- X% increase in [specific metric]
+- Y% improvement in [specific metric]
+- Z% growth in [specific metric]
+```
+
+### The Challenge (250-300 words)
+- Open with specific technical or operational pain points
+  - Begin with the most significant or limiting challenge
+  - Use concrete examples rather than abstract problems
+  - Connect directly to the client's particular business model
+- Include one direct quote that adds insight
+  - The quote should provide perspective, not just restate the problem
+  - Ideally from the client describing their pain points
+  - If no quotes are available, use the placeholder format specified
+- Develop 2-4 specific challenge areas in separate paragraphs
+  - Each paragraph should focus on a distinct challenge area
+  - Explain both the technical limitation and its business consequence
+  - Use varied paragraph openings and transitions between challenges
+- Connect technical limitations to business impact
+  - Show how each technical problem affected sales, operations, or growth
+  - Include specific examples when possible (e.g., "During peak season...")
+  - Make clear why these problems demanded a solution now
+- End by explaining why the platform was the right solution
+  - Mention specific the platform capabilities that address their unique challenges
+  - Keep this brief (1-2 sentences) as a transition to the Solution section
+  - Avoid generic platform praise—focus on relevant features for this case
+
+### The Solution (250-300 words)
+- Open with a sentence about the partner's overall approach
+  - Briefly frame how they tackled the client's challenges
+  - Set up the specific components that will follow
+  - Avoid generic statements about "strategic solutions" or "custom approaches"
+- Detail specific implementations, not general approaches
+  - Name actual features, integrations, or customizations built
+  - Include relevant technical details without becoming overly technical
+  - Specify which the platform tools or apps were utilized and how
+- Break into distinct components with clear explanations
+  - Dedicate separate paragraphs to different aspects of the solution (e.g., one for ERP integration, another for mobile optimization)
+  - You don't need subheadings or bullet points within this section
+  - Each paragraph should focus on a distinct aspect with specific details about what was built or configured, not just general strategies
+- Include 1 quote about the implementation approach
+  - Ideally from the partner explaining their thinking or approach
+  - Position the quote where it best supports a key solution component
+  - Ensure it adds insight rather than just describing what was done
+- Connect technical solutions to business benefits
+  - For each implementation, explain how it addressed a specific challenge
+  - Show the "so what"—why this solution matters for business outcomes
+  - Create clear links between the challenges identified earlier and how they were solved
+
+### The Results (150-200 words)
+- Open with specific metrics and their business impact
+  - Lead with the most impressive or relevant metric
+  - Avoid generic phrases like "The impact was significant" or "The results speak for themselves"
+  - Connect metrics directly to the solutions implemented
+- Organize results in order of importance
+  - Group related metrics together in single sentences when appropriate
+  - Ensure each metric clearly connects to business value, not just technical improvement
+  - Use precise numbers with consistent formatting (e.g., always use % symbol)
+- Include a quote about results or ongoing partnership
+  - Choose a quote that reflects satisfaction or future outlook
+  - Position where it best supports the narrative, usually after key metrics
+  - Ensure it adds substance rather than generic praise
+- Briefly mention future plans
+  - 1-2 sentences about next steps or ongoing initiatives
+  - Focus on how the foundation built will support future growth
+  - Be specific about planned enhancements or expansions
+- End with a concise statement about long-term impact
+  - Connect back to the client's brand identity or mission
+  - Show how the solution positions them for sustained success
+  - Avoid clichés about "revolutionizing" their business
+  - Make the final sentence memorable and forward-looking
+
+## Style Requirements
+
+1. **Professional but conversational tone**
+   - Not academic or overly formal
+   - Not marketing fluff or corporate jargon
+
+2. **Paragraph Structure**
+   - Keep paragraphs short (3-4 sentences maximum)
+   - Vary sentence structure throughout
+   - Avoid beginning consecutive paragraphs with the same pattern
+
+3. **Section Headers**
+   - Create unique headers related to the client's industry or specific challenge
+   - Examples:
+     - "The Challenge: When Technical Limitations Undermine Trust"
+     - "The Solution: Building a Digital Platform Worthy of a Century-Old Legacy"
+     - "The Results: From Friction to Flawless Customer Experience"
+
+4. **Language Patterns to Avoid**
+   - "Leverage" (use "use," "employ," or "implement" instead)
+   - "Utilize" (use "use")
+   - "Robust" (specify what makes it strong)
+   - "Solution" as a standalone term (be specific)
+   - "It's not only X, but also Y" (overused construction)
+   - "It didn't just X, it did Y" (overused construction)
+   - Any marketing superlatives without specifics
+   - Rhetorical questions in headers or body text
+   - Overly technical language
+   - Referring to the client as "the client" (use "brand," "business," or "organization" instead)
+
+5. **Voice and Framing**
+   - Write in third person except for direct quotes
+   - Use active voice consistently
+   - Connect technical features directly to business outcomes
+   - Use concrete language rather than abstractions
+   - Present metrics precisely (e.g., "16% increase" not "significant improvement")
+
+## Style Requirements
+
+### 1. Professional but Conversational Tone
+- **Balance expertise with accessibility**
+  - Write as if explaining complex concepts to an informed colleague, not a technical peer
+  - Aim for the tone of a quality business publication (Harvard Business Review, Fast Company)
+  - Sound knowledgeable without being academic or overly technical
+- **Avoid extremes**
+  - Too formal: Heavy with passive voice, complex sentences, and academic terminology
+  - Too casual: Slang or conversational asides
+- **Example of appropriate tone:**
+  - Instead of: "The implementation of the platform's API functionality facilitated the integration of disparate systems."
+  - Use: "The team integrated the platform's API with existing systems, connecting previously siloed data."
+
+### 2. Paragraph Structure
+- **Keep paragraphs short (3-4 sentences maximum)**
+  - Break longer ideas into multiple paragraphs for improved readability
+  - Vary paragraph length—occasional 1-2 sentence paragraphs add rhythm
+  - Ensure each paragraph focuses on a single main idea
+- **Vary sentence structure throughout**
+  - Mix short, declarative sentences with occasional complex ones
+  - Alternate how sentences begin (subject, prepositional phrase, transitional word)
+  - Example of varied structure:
+    - "The team rebuilt the entire checkout flow. With mobile users in mind, they simplified the form fields and removed unnecessary steps. This streamlined approach reduced cart abandonment by 24%."
+- **Avoid beginning consecutive paragraphs with the same pattern**
+  - Check the first words of each paragraph to ensure variety
+  - Use different transition approaches between paragraphs
+  - Vary how you introduce new ideas (problem statements, examples, metrics, etc.)
+
+### 3. Section Headers
+- **Create unique headers related to the client's industry or specific challenge**
+  - Generic: "The challenge"
+  - Better: "The challenge: When Technical Limitations Undermine Trust"
+- **Follow consistent formatting across all headers**
+  - Use sentence case consistently
+  - Maintain similar length and structure across sections
+  - Ensure headers work together to tell a cohesive story
+- **Header construction patterns that work well:**
+  - Problem/Solution format: "The challenge: When global scale compromises brand identity"
+  - Industry-specific language: "The solution: Engineering digital craftsmanship"
+  - Outcome-focused: "The results: From friction to flawless customer experience"
+  - Metaphorical (when appropriate): "The solution: Stitching together a seamless experience"
+- **Avoid:**
+  - Questions in headers
+  - Generic marketing phrases like "Taking it to the next level"
+  - Headers that don't clearly relate to the content that follows
+  - Overly clever wordplay that obscures meaning
+
+### 4. Language Patterns to Avoid
+- **Business jargon and overused terms**
+  - "Leverage" (use "use," "employ," or "implement" instead)
+  - "Utilize" (use "use")
+  - "Robust" (specify what makes it strong)
+  - "Solution" as a standalone term (be specific about what was implemented)
+  - "Streamlined" (explain exactly how the process improved)
+  - "Enhanced" (say exactly what improved and how)
+  - "Best-in-class" or "world-class" (meaningless without specifics)
+  - "Cutting-edge" or "bleeding-edge" (describe the actual innovation)
+- **Repetitive sentence constructions**
+  - "It's not only X, but also Y" (overused construction)
+  - "It didn't just X, it did Y" (overused construction)
+  - "Not only did they X, they also Y"
+  - Starting consecutive sentences with the same transitional phrase
+- **Vague descriptors**
+  - "Significant improvement" (use specific percentages)
+  - "Substantial growth" (provide numbers)
+  - "Dramatic results" (quantify)
+  - "Improved user experience" (explain exactly how it improved)
+
+### 5. Voice and Framing
+- **Write in third person except for direct quotes**
+  - Avoid first person ("We implemented") or second person ("You can see")
+  - Exception: Direct quotes can and should use first person
+- **Use active voice consistently**
+  - Weak: "A custom theme was developed by the partner."
+  - Strong: "The partner developed a custom theme."
+  - Check for passive constructions: "was implemented," "were created," etc.
+- **Connect technical features directly to business outcomes**
+  - Weak: "They implemented advanced filtering options."
+  - Strong: "They implemented advanced filtering options, which reduced product discovery time by 40% and led to higher conversion rates."
+  - Always answer "so what?"—why each technical feature matters
+- **Use concrete language rather than abstractions**
+  - Vague: "They improved the user experience."
+  - Specific: "They reduced checkout steps from five to three, decreasing cart abandonment by 15%."
+- **Present metrics precisely**
+  - Weak: "significant increase in conversion"
+  - Strong: "16% increase in conversion rate"
+  - Be consistent with number formatting (% vs. "percent," decimals, etc.)
+  - Provide context for metrics when helpful (e.g., "16% increase in conversion rate, double the industry average")
+
+### 6. Technical Content Balance
+- **Make technical content accessible without oversimplifying**
+  - Explain technical concepts concisely when they're essential
+  - Focus on why the technical approach matters, not just what it is
+  - Use industry-standard terminology but avoid unnecessary jargon
+- **Use technical terms appropriately and consistently**
+  - Be precise with platform-specific terminology (the platform features, etc.)
+  - Define technical concepts on first use if they're not widely understood
+  - Maintain consistent terminology throughout (don't alternate between similar terms)
+- **Balance technical and business language**
+  - Technical information should support the business narrative, not dominate it
+  - When describing technical implementations, always connect to user experience or business impact
+  - Assume the reader is business-savvy but not necessarily technical
+
+### 7. Narrative Flow and Transitions
+- **Create smooth transitions between paragraphs and sections**
+  - Use varied transitional phrases, not just "Additionally" or "Furthermore"
+  - Connect ideas logically, showing how one point leads to the next
+  - Ensure the narrative progresses clearly from challenge to solution to results
+- **Maintain narrative momentum**
+  - Each paragraph should build upon the previous one
+  - Avoid repetition or backtracking to earlier points
+  - Ensure the reader always understands why a particular detail matters
+- **Vary paragraph openings for rhythm and interest**
+  - Start some paragraphs with the subject and verb
+  - Use transitional phrases sparingly and with variety
+  - Occasionally begin with a compelling statistic or brief scenario
+
+## Quote Handling
+
+If quotes aren't provided, use placeholder text formatted as:
+```
+[QUOTE NEEDED: Brief description of what this quote should address]
+```
+
+Similarly, if metrics aren't available:
+```
+[STAT NEEDED: Description of the metric type]
+```
+
+## Iteration Process
+
+When revising drafts:
+
+1. **Focus on specific sections rather than complete rewrites**
+   - "Make the challenge section more concise while maintaining key points"
+   - "Revise the solution section to focus more on implementations"
+
+2. **Target specific style issues**
+   - "Remove passive voice in paragraph 2"
+   - "Vary the sentence structure in the introduction"
+   - "Make this section less corporate-sounding"
+
+3. **Maintain consistent length guidelines**
+   - Introduction: 150-200 words
+   - Challenge: 250-300 words
+   - Solution: 250-300 words
+   - Results: 150-200 words (keep especially concise)
+
+## Learning from Example Case Studies
+### Analyzing Reference Materials
+I'm going to give you a series of case study examples.
+
+- **Review all provided examples thoroughly**
+  - Read each example case study completely before beginning analysis
+  - Note how different industries and challenges are handled
+  - Pay attention to transitions between sections and paragraphs
+  - Observe how quotes are positioned to support key points
+- **Identify voice and tone patterns**
+  - Notice the professional but accessible language
+  - Mark sections that effectively explain technical concepts without jargon
+  - Note how the writing maintains authority without becoming corporate or stiff
+  - Observe how sentence structure varies while maintaining consistent voice
+- **Study structural elements**
+  - Analyze paragraph length and construction across different sections
+  - Note how introductions establish context efficiently
+  - Observe how challenges are connected to business implications
+  - See how solution components are organized logically
+- **Extract formatting conventions**
+  - Identify consistent patterns in metric presentation
+  - Note header formatting and construction approaches
+  - Observe bullet point usage and consistency
+  - Study quote placement and attribution formatting
+
+### Applying Learned Patterns
+- **Balance technical detail with business narrative**
+  - Note how examples connect technical implementations to business outcomes
+  - Observe how technical details are presented accessibly
+  - Study how examples avoid excessive technical jargon
+- **Analyze sentence structure variation**
+  - Identify how examples vary sentence openings and constructions
+  - Note effective transitions between ideas and paragraphs
+  - Observe how rhythm is maintained through varied sentence length
+- **Study section header effectiveness**
+  - Examine how descriptive headers relate to specific content
+  - Note how headers maintain consistent structure while being unique
+  - Observe industry-specific terminology in headers
+- **Evaluate metric presentation**
+  - Note how concrete metrics are formatted consistently
+  - Study how metrics are connected to implemented solutions
+  - Observe how results are prioritized and presented
+
+### Maintaining Consistent Quality
+- **Use examples as benchmarks, not templates**
+  - Adapt patterns to each new case study's unique circumstances
+  - Maintain consistent quality while allowing for industry variation
+  - Apply learned techniques rather than copying specific phrases
+- **Refer back to examples when addressing specific challenges**
+  - Use examples to resolve questions about handling technical content
+  - Reference example transitions when struggling with flow
+  - Check metric presentation when structuring results
+
+I'd like you to learn the voice, tone, style, and formatting of each of the examples. I'm going to input each example individually. After each example is input, confirm by saying, "Training input confirmed!" Do not provide a summary of what you learned from each example.</div>
+                    </div>
+
+                    <div class="prompt-box">
+                        <div class="prompt-header">
+                            <div class="prompt-title">Action 2: Enter the second training prompt</div>
+                            <button class="copy-btn">Copy to clipboard</button>
+                        </div>
+                        <div class="prompt-content">CASE STUDY EXAMPLE 1
+How RUDIS achieved an 80% revenue increase with the platform & CQL
+RUDIS launched in 2013 with a vision to create quality performance gear for wrestlers and has since become the market leader in wrestling. Despite their brand growth, RUDIS had outgrown their existing commerce platform, WooCommerce, and struggled to meet demand.
+RUDIS partnered with CQL to accomplish two things: stabilize the new RUDIS site with their new platform Plus and optimize it with a rapid iteration of new features, integrations, and improved design and user experience. With the celebration of RUDIS's 10-year anniversary, the new site launch also served as a catalyst for a stunning brand refresh that would present wrestling in a way that the world had never seen.
+RUDIS's new digital ecosystem, built with their new platform as a foundation for rapid growth, features a modernized brand, new technology partnerships, and a high-energy, engaging user experience. All of it together highlights RUDIS's expertise, mission, champion athletes, custom team apparel, and high-performance gear.
+In their relentless pursuit of excellence, RUDIS has achieved unprecedented growth with their new platform:
+80% revenue increase
+70% order increase
+27% conversion rate increase
+The challenge: Pinned down by tech paralysis
+Despite their growth, RUDIS was in tech paralysis after outgrowing their old ecommerce platform. Their booming website couldn't support big product drops and would experience frequent site outages, leaving the wrestling brand struggling to meet growing demand.
+
+Quickly becoming the buzz of the wrestling industry, RUDIS's increased popularity quickly proved their old tech stack was unable to support their volume of website orders. RUDIS needed to build out a new ecommerce foundation that was flexible, efficient, and scalable for brand growth in a competitive marketplace.
+
+The RUDIS team came to CQL for a two-phased implementation. The first phase needed to focus on site stability and site speed, in addition to a brand refresh to elevate the brand's look and give new energy to the site design. The second phase would focus on growth and innovation, optimizing the site with a rapid iteration of new features, integrations, and enhanced design and user experience.
+
+The solution: Becoming a champion with their new platform
+With the celebration of RUDIS' 10 year anniversary, the new site launch with their new platform served as a catalyst for a stunning brand refresh that would present wrestling in a way that the world had never seen. Using CQL's the platform Plus framework Propel as a new foundation for growth, the new RUDIS website emerged with an energetic brand refresh and an intuitive, compelling user experience that proudly showcases the brand's expertise, mission, champion athletes, and high-performance wrestling gear.
+
+"Our team came to CQL not only looking for improvement with stability and speed of our website, but a new design that is cohesive with our brand and products. Their team built a solution within the platform Plus that was more flexible, efficient, and is something we can build upon to support our continual growth. We look forward to the ongoing partnership."
+—Cory Stainbrook, Director of Ecommerce, Rudis
+
+While maintaining a look that feels organic and authentic to the RUDIS brand, the CQL team introduced a creative design with their new platform that brings high energy and elevates RUDIS's product through the juxtaposition of models and layered storytelling interfaces.
+the platform's powerful CMS allows RUDIS to exhibit their wrestling ethos and unparalleled expertise with engaging product stories, highlights of RUDIS's design and engineering, champion athlete stories, and spotlights on Team RUDIS. RUDIS customers can find Team RUDIS wrestling champions like Jordan Burroughs and Kyle Snyder, learn about their history and achievements, and shop their RUDIS brand wrestling shoe collections.
+Following their initial launch which included an integration with ERP system NetSuite, the RUDIS team quickly discovered opportunities for business expansion and optimization. Leveraging the platform's flexible platform and stable foundation for growth, RUDIS quickly integrated new technology partners for search, merchandising, reviews, and returns. RUDIS has taken advantage of the platform's efficiency and successfully launched several new projects including new merchandising sections to promote outfits and looks, new email landing pages, a Virtual Shoe Size Finder, new product page grid layouts, and updated photography to further enhance their digital transformation.
+The results: Winning with unprecedented growth
+RUDIS launched a digital experience that improves commerce capabilities, technologies, and customer experiences. The impact of the the platform launch was seen quickly. By cyber week, RUDIS had achieved the largest volume and year-over-year growth in their history with an 80% revenue increase, a 70% order increase, and a 27% conversion rate increase YOY.
+
+the platform provided not only the site stability that RUDIS was seeking, but also the flexibility and efficiency for continued business growth. the platform's checkout extensibility allowed RUDIS to optimize their buy stack with content and enhance the site with a simpler purchase workflow. the platform's powerful CMS also helped improve the user experience and email performance with custom landing and product collections pages. And the platform's built-in SEO features have helped increase SEO rankings for RUDIS products and pages.
+
+RUDIS is also the recipient of a Platinum 2024 MUSE Creative & Design Award and a Grand 2024 NYX Award, two prestigious award programs honoring creative, design, and marketing professionals.
+
+RUDIS stands as a testament to dedication, precision, and a relentless pursuit of excellence—on the mat, in their gear, and now, with their the platform digital transformation.</div>
+                    </div>
+
+                    <div class="prompt-box">
+                        <div class="prompt-header">
+                            <div class="prompt-title">Action 3: Enter the third training prompt</div>
+                            <button class="copy-btn">Copy to clipboard</button>
+                        </div>
+                        <div class="prompt-content">CASE STUDY EXAMPLE 2
+ATTITUDE Living launches multi-country stores with their new platform Hydrogen and Oxygen, increasing new customers by 9%
+
+Inspired by the founder's desire to provide clean and effective products for his growing family, ATTITUDE Living embodies a deep commitment to transparency and care—both for individuals and the planet. Since 2006, ATTITUDE has been on a mission to revolutionize the home, body, and face industry by offering clean products in eco-innovative packaging designed to reduce plastic.
+
+When their front-end technology provider announced it was sunsetting its platform, ATTITUDE was in need of a new solution that would empower them to build informative, dynamic product pages. They wanted to expand their existing the platform footprint, appreciating the design flexibility and the site speed that the headless approach already gave them on the back end. And they looked to Novatize as the partner to help them achieve it.
+
+By migrating their front end with the new solution, ATTITUDE saw these results:
+9% increase in new customers
+15% increase in average revenue per user (ARPU)
+10% increase in average order value (AOV)
+40% improvement in page load time
+
+The challenge: Choosing a fast and flexible headless architecture
+With their front-end technology no longer supported, ATTITUDE looked to implement a new headless architecture. They'd also recently needed to migrate off a third-party content management system (CMS), so they wanted a front end that could independently support their content needs. 
+
+With the platform's UX/UI flexibility and powerful site speed, ATTITUDE knew it was the right choice. Faced with the high competition of the beauty industry, they wanted their front-end design to stand out while still being lightning fast. Specifically, they wanted to display all relevant images, brand messaging, and product information on product detail pages (PDPs), as well as build a creative way to help customers discover their wide range of products with a new menu banner.
+
+Beyond improving the experience across their pages, ATTITUDE also looked to consolidate multiple stores down to one in each region. That way, they could focus on optimizing operations and unifying their brand identity, along with lower costs and reducing third-party dependent maintenance fees.
+
+With their decision to migrate with the new solution locked in, ATTITUDE needed the right partner to make it happen. For this, they had three criteria—the partner needed to be the platform certified, local to their Montreal, Canada headquarters, and speak French. As a firm specializing in unified commerce, Novatize checked all of the boxes.
+
+The solution: Building clean, dynamic sites with the platform Hydrogen and Oxygen
+With Novatize on board, the team set to migrate the front end of ATTITUDE's websites with the new solution. Above all else, ATTITUDE wanted their sites to be both high performing and easy to maintain. Using the platform Hydrogen as the headless commerce solution, combined with the platform Oxygen for global hosting, Novatize built the sites with Remix to keep the custom storefronts performing quickly with a modern, streamlined developer experience.
+
+From there, Novatize and ATTITUDE shifted the focus to elevating the sites' design and shopper experiences, using the Shogun app as their landing page builder.
+
+Creating custom pages with the platform metaobjects
+Using the platform's metaobjects and metafields, ATTITUDE now dynamically manages content without relying on an external CMS. They can easily customize product pages and market-specific information directly through the platform. Also, because Novatize rebuilt their websites using a single master site, the team can seamlessly manage content, products, and campaigns across multiple markets and languages.
+
+Take ATTITUDE's sun care product discovery page. It features interactive filters that help shoppers quickly find products that match their specific needs, such as UV protection level or natural ingredients. This approach enhances the shopping experience by giving visitors the ability to filter and discover relevant products, while the simple and modern visual design reinforces ATTITUDE's eco-friendly mission by highlighting their commitment to environmental protection through planet-friendly product choices.
+
+From there, each product page is designed to highlight clear and detailed information such as natural ingredients, eco-friendly certifications, and the benefits of the product for the skin and the environment. With several certifications—including EWG VERIFIED, PETA, and FSC—ATTITUDE uses cutting-edge scientific research to ensure their products are free from harmful ingredients. The dynamic structure combines server-side rendering with client-side interactivity to recommend complementary products based on the shopper's preferences or previous purchases, such as additional care adapted to their routine.
+
+The results: An optimized international headless platform
+Now that all of ATTITUDE's sites share the same headless the platform Hydrogen codebase, the team manages a flexible environment that's ready for future projects. The dynamic Hydrogen architecture allows ATTITUDE to deliver a consistent user experience and meet the specific needs of each market, resulting in a 9% increase in new customers. The implemented solution also offers intuitive the platform store management in two distinct languages, French and English, across multiple sales regions in Canada and the US—creating a 15% increase in average purchase revenue per user.
+
+"We're proud to have partnered with ATTITUDE Living to build a high-performance, headless the platform Hydrogen storefront that reflects their commitment to sustainability. Throughout the project, we have worked with their team to ensure they have full control over the solution moving forward."
+—Philippe Pâquet-De Varennes, Vice President of Sales, Novatize
+
+By opting for a purely headless architecture native with the new solution that doesn't rely on a third-party CMS, Novatize eliminated caching delays and unnecessary costs. Instead, that necessary functionality is built directly into the the platform application API, guaranteeing a fluid and responsive user experience in all languages, improving page load time by 40%, and ultimately helping ATTITUDE grow their business.</div>
+                    </div>
+
+                    <div class="prompt-box">
+                        <div class="prompt-header">
+                            <div class="prompt-title">Action 4: Enter the fourth training prompt</div>
+                            <button class="copy-btn">Copy to clipboard</button>
+                        </div>
+                        <div class="prompt-content">CASE STUDY EXAMPLE 3
+Stadium Goods achieved an 80% increase in conversion with VAAN and the platform
+
+
+Stadium Goods, a leader in rare sneakers and streetwear, faced mounting challenges with their bespoke ecommerce platform FPS, including slow site speed, high maintenance costs, and limited scalability. The Stadium Goods site was hindering the brand's ability to grow and maintain their reputation for exceptional service. Partnering with VAAN and the platform, Stadium Goods replatformed with the new solution to unlock greater efficiency, flexibility, and customer satisfaction.
+
+Since moving with the new solution and working with VAAN, Stadium Goods has seen:
+
+An 80% overall increase in conversion rate
+A 36% YOY increase in Black Friday and Cyber Monday (BFCM) web conversion rate
+A 100% YOY increase in BFCM app conversion rate
+A 46% increase in add-to-cart rate
+
+The challenge: Scaling a marketplace for rare sneakers
+Stadium Goods built their reputation as a go-to marketplace for rare sneakers and streetwear with a unique two-way model that tracks serialized inventory and assigns custom prices to individual items. However, as the business scaled into a direct-to-consumer and multichannel powerhouse, their custom ecommerce platform became a liability.
+
+Their bespoke platform suffered with slow site speeds, frequent technical challenges, and high maintenance costs, which limited Stadium Goods' ability to grow and adapt quickly. They needed a modern, scalable solution that could handle their complex marketplace operations while enhancing the customer experience and reducing operational inefficiencies.
+
+"The Stadium Goods team, like many clients, often discussed migrating to the new solution due to roadblocks with their current platform while having unique consigner requirements. By working in lockstep with Vann and Stadium Goods, we were able to propose a solution that not only met their needs but also positions them well for future growth."
+—Allyssa Wickens, Account Executive Large Accounts, the platform
+
+The solution: Migrating with the new solution before the holiday season
+To address these challenges, Stadium Goods partnered with VAAN to migrate from their custom bespoke platform with the new solution. The project required a rapid turnaround to ensure the new platform was live before the peak of the holiday season. Detailed guidance on optimizing product structure, data migration paths, and aligning their PIM and OMS workflows was vital. Key aspects of the solution included:
+
+Data migration oversight: Migration of the extensive product catalog, serialized inventory, and customer data with the new solution ensured the integrity of their marketplace model.
+Optimized design: Applying their Brand Conversion Design philosophy, the VAAN team optimized the site design in accordance with the platform theme-design paradigms.
+Custom integrations: Tapcart was implemented for mobile app functionality and Braze for advanced email marketing, supporting Stadium Goods' omnichannel strategy.
+Back-end flexibility: The migration simplified content and theme management, allowing the internal team to handle updates while freeing developers to focus on innovation.
+
+"VAAN has been an incredibly nimble, collaborative, and impactful partner, helping us migrate from a custom eCommerce platform with the new solution at lightning speed. We set a very aggressive timeline (in spite of our size and complexity), and we hit it, landing one of the smoothest platform migrations I've seen, in time for holiday peak. A few weeks post-transition, we're already seeing a double-digit improvement in conversion rate, and material reduction in our cost of ownership. VAAN was instrumental in this achievement."
+—Illarion Koperski, CTO, Stadium Goods
+
+The Results: Dramatic increases in conversion and add-to-cart rate
+The transition with the new solution transformed Stadium Goods' ecommerce performance. The platform's robust infrastructure and VAAN's streamlined design contributed to an 80% increase in conversion rates and substantial savings in total cost of ownership.
+
+Stadium Goods' journey with the new solution highlights the impact of a well-executed platform migration. With VAAN's expertise, they've not only solved the issues of speed, flexibility, and cost, but have positioned themselves for scalable, sustainable growth in the DTC market.
+
+"At VAAN, we prioritize leveraging public dependencies and resources to ensure flexibility and compatibility with Stadium Goods' preferred systems. This approach enabled a seamless migration to GitLab alongside the transition with the new solution. By utilizing docker containers to encapsulate processes, we ensured consistent functionality regardless of the environment in which they run."
+—Illarion Koperski, CTO, Stadium Goods
+
+"Our goal is to empower clients by providing everything they need—whether it's direct access to the code or ensuring any external dependencies are publicly available," says Illarion Koperski. "This way, we avoid creating restrictions or owning critical components, giving clients full access and control over their systems."
+
+The Stadium Team also saw an increase of 46% in add-to-cart rate as a result of replatforming with the new solution, as well as significant year-over-year increases in conversion during their peak Black Friday Cyber Monday sales with a 36% YOY increase in BFCM web conversion rate and a 100% YOY increase in BFCM app conversion rate with their Tapcart instance.
+
+The the platform replatforming has given Stadium Goods a powerful, adaptable digital presence that resonates with their brand and supports their future ambitions. Through a strategic partnership with VAAN and the power of the platform, Stadium Goods now stands equipped to lead and grow in an ever-evolving market.</div>
+                    </div>
+
+                    <div class="prompt-box">
+                        <div class="prompt-header">
+                            <div class="prompt-title">Action 5: Enter the fifth training prompt</div>
+                            <button class="copy-btn">Copy to clipboard</button>
+                        </div>
+                        <div class="prompt-content">CASE STUDY EXAMPLE 4
+quip improves ways of working, increases speed and agility after replatforming with the new solution
+
+Founded in 2015, quip set out to revolutionize oral care with a simple mission: to make dental hygiene more accessible, effective, and stylish. Frustrated with overcomplicated, expensive toothbrushes and the lack of dental hygiene innovation, quip wanted to create a product that was both functional and beautifully designed.
+With a focus on minimalist, user-friendly design, quip introduced an affordable electric toothbrush paired with a subscription model that delivered brush heads and dental hygiene products directly to customers. 
+This approach simplified oral care for millions of customers, but ironically, quip soon faced similar frustrations with its custom-built ecommerce platform. Much like the bulky, inefficient toothbrushes they sought to replace, their homegrown solution became cumbersome, hard to scale, and a drain on resources. quip needed a platform that, like their product, was simple, reliable, and capable of growing with them—and that's when they turned to Avex to migrate them with the new solution.
+Since moving with the new solution, quip has seen major results:
+70% decrease in customer experience cases regarding refill plan management (via Recharge)
+45% decrease in customer experience cases regarding warranty (via Loop)
+The challenge: When a homegrown platform becomes a roadblock
+quip's custom-built ecommerce platform, while once an asset, quickly became a roadblock as the brand experienced rapid growth. The escalating demand for custom coding to support new features and product launches placed immense pressure on the tech team, which was continually engaged in a cycle of heavy development and technical maintenance.
+
+This relentless focus on upkeep left little room for innovation. Each new product update became a time-consuming task, requiring extensive development resources that delayed timelines and limited the brand's agility in the market. As a result, quip struggled to adapt to changing consumer demands and emerging trends, leading to missed opportunities for growth.
+
+Moreover, the challenges of scaling the platform negatively affected the overall customer experience. With sluggish updates and limited functionality, including search features, customers encountered frustrations that diminished their satisfaction and loyalty to the brand. 
+
+The solution: quip replatforms with the new solution for greater agility
+To tackle quip's challenges with scalability and operational efficiency, Avex used the platform's robust capabilities as a high-performance platform designed specifically for high-growth brands. the platform offered a comprehensive solution through its scalable infrastructure, robust APIs, and access with the new solution's expansive app ecosystem, providing the tools and integrations necessary to meet quip's growing demands.
+
+"Avex understood what we were trying to achieve and worked tirelessly to help us in our (incredibly rapid!) transition. It was clear that the company's expertise and connection with the platform was remarkably strong, and we appreciated the leadership in guiding the process while also being flexible to suit our unique business needs."
+—Meredith Glansberg, Chief Revenue Officer, quip
+
+Migrate quickly, with data intact
+The migration was completed within four months, starting with a detailed discovery phase to assess quip's needs. The first priority was the data migration process, which involved precise mapping of products, customer profiles, and order histories. Avex ensured that no historical data was lost and that all customer accounts and orders remained accurate and operational post-migration.
+
+To meet the accelerated timeline, Avex also used one of its custom the platform themes, which was modified to align with quip's brand guidelines. This allowed the team to streamline the development process while maintaining the brand's identity.
+
+Use subscriptions to encourage better health outcomes
+Subscription is not only a major revenue driver for quip, but is also critical to the company's health-focused mission: People should change their toothbrush every three months, but the majority don't. quip's subscription offering helps customers check one critical "to do" item off their list and contributes to better oral health outcomes. Avex and quip worked closely with Recharge to implement custom subscription logic. For instance, when customers purchase a toothbrush, they can subscribe exclusively to receive replacement brush heads, offering a more tailored experience and encouraging long-term retention.
+
+The ability for customers to more easily automate their customer service request needs and manage their subscriptions via Recharge has also reduced cases for the company by 70%, allowing for more focus on improving customer experience and loyalty.
+
+Quickly update content to capitalize on key moments
+One of the key advantages quip gained by migrating to the new solution was the ability to easily update content using the the platform page builder, without relying on a tech team. Its drag-and-drop functionality empowers quip's marketing and content teams to make real-time updates to product pages, landing pages, and promotions without needing coding knowledge.
+
+Since moving with the new solution, quip has been able to capitalize on market trends and make page improvements at a fraction of the speed and with less resources than in the past. Quip launched their award-winning 360 Oscillating Toothbrush onto the new site and has been able to over-achieve sales expectations with the platform's capabilities. 
+
+quip also launched their Gift Guide on the site in time for pre-Black Friday sales. This guide allowed shoppers to dive right into the idea of oral care gifting, driving conversion during the key holiday season for the brand.
+
+The results: Better ecommerce, made simple
+quip's replatform with the new solution through Avex has been transformative, directly addressing their operational challenges and setting a solid foundation for future growth. Customers have appreciated the significantly improved user experience and have responded to the self-service subscription options very positively. 
+
+"We have continued to get feedback on the enhanced user experience as a result of our migration with the new solution (and partnership with Recharge). Moving to a headed experience with the platform via our Avex partnership is now allowing us to take advantage of this ecosystem and move more quickly and nimbly to continue to grow our business."
+—Meredith Glansberg, Chief Revenue Officer, quip
+
+Now, the brand is unlocking the full power of the platform's capabilities and vast app ecosystem, enabling rapid and effective solutions tailored to their evolving needs. This newfound flexibility allows them to seamlessly integrate a variety of tools, such as Loop and Yotpo, to streamline operations, elevate customer interactions, and drive efficiency. After integrating Loop with their the platform platform, quip was able to connect their warranty program more closely to the post-purchase experience, resulting in a 45% decrease in warranty cases.
+
+With this strategic shift with the new solution, quip is poised not only for immediate success but also for long-term growth in the competitive ecommerce landscape. The future looks bright!</div>
+                    </div>
+
+                    <div class="prompt-box">
+                        <div class="prompt-header">
+                            <div class="prompt-title">Action 6: Enter the sixth training prompt</div>
+                            <button class="copy-btn">Copy to clipboard</button>
+                        </div>
+                        <div class="prompt-content">CASE STUDY EXAMPLE 5
+Bambi Baby Reduces Checkout Times Across Retail Stores and Boosts Conversion Rates by 30%
+
+Since 1976, Bambi Baby has grown from a small family-owned department store into a leading specialty furniture retailer offering baby furniture, baby gear, car seats, and more. With five retail locations across New York, New Jersey, and Florida, plus a thriving ecommerce business, they've built their reputation on providing personalized service and expert guidance to new parents selecting all the essentials for their growing families.
+
+But as the business expanded, Bambi Baby's manual processes and disconnected commerce systems couldn't keep pace with customer expectations for fast, efficient service. Unifying their sales channels with their new platform helped them overcome these challenges. In the four months since replatforming, Bambi Baby has seen remarkable results, including: 
+
+30% growth in conversion rates online and offline
+30% growth in average order values (AOV)
+Reduced in-store checkout times from several minutes to seconds
+Increased repeat purchases and customer lifetime value (LTV) due to integrated loyalty rewards program across channels
+
+The Challenge: Improving inefficient and manual processes
+Before the platform, Bambi Baby struggled to find technology solutions that could scale with their business. In their stores, they had tried Fishbowl POS and their online store ran on BigCommerce, but they needed a unified solution that could support their growing omnichannel operations. This led them to fall back on manual processes that were growing unsustainable. 
+
+Store associates, focused on helping customers select the right products, struggled to keep up with manual order entry, especially busy weekend hours. "We were doing pen and paper transactions using an Excel sheet, scanning them, and having back office enter orders," explains Josh Weiss, IT Director at Bambi Baby. "You'd come in on a Monday and have to enter 50 orders manually. It just became a process that was not sustainable."
+
+The paper-based checkout process also created bottlenecks. "You'd have four or five people backed up trying to buy something," says Josh. "People were just like, 'I'm out of here.'" 
+
+Inventory management was also an issue. Prior with the new solution, stores maintained minimal inventory and largely operated as showrooms. But this meant that when customers wanted to take products home same-day, they often had to drive 30 minutes to the warehouse, which was inconvenient and put unnecessary strain on warehouse operations.
+
+The brand's loyalty program faced challenges as well, with in-store purchases requiring manual point tracking and customer service intervention to ensure rewards were properly credited. These technical limitations weren't just creating inefficiencies—they were actively holding back growth and hurting Bambi Baby's customer experience, especially as they continued to expand their brick-and-mortar presence. That's when they decided to move with the new solution. 
+
+The Solution: A retail solution built for growth
+Working with design and development agency Syatt, Bambi Baby replatformed with the new solution in just three months, launching both their website and point of sale systems across all locations. "I've never had a project be on time before from development to deployment," says Josh. "There's so many moving pieces and I was stressed, but it happened. It went off without a hitch."
+
+Each store now operates multiple the platform POS stations plus mobile devices, enabling staff to process transactions anywhere on the floor. "I can check four people out simultaneously and it takes minutes to do so," says Josh. Training new employees on the system takes just 35 minutes, and the intuitive interface allows staff to spend more time with customers. "Now I have time to be with people because the same 10 minutes I used to spend writing up orders, I can be upselling," explains Josh.
+
+Inventory and order management have been transformed as well. With the platform's multiple location inventory capabilities and visibility across locations, Bambi Baby can confidently stock all their stores, enabling customers to take products home same-day. "The ability for customers to pay and leave with a box has been great for growth," says Josh. "Buying baby gear is exciting for parents. They want to buy their stroller and go home and set it up." A seamless integration with their SellerCloud ERP system is also a key improvement, enabling efficient order fulfillment whether items are being picked up in-store or shipped from the warehouse. "It helps me operate a well-oiled machine," says Josh.
+
+the platform has also helped streamline the brand's loyalty program. The team uses Smile, a third-party app built for the platform, to ensure rewards are instantly credited to Bambi Baby's customers regardless of where they shop. This efficiency extends to their promotional strategy too as the team can now manage discounts centrally and deploy them across both online and in-store channels instantly.
+
+"The fact that I can be sitting 30 miles away from our closest store and can update all the point of sale devices with a new coupon through the platform saves a ton of time. When staff arrive they just see a new button on the POS screen. It's that easy."
+—Josh Weiss, IT Director, Bambi Baby
+
+The Results: From manual to modernized retail
+the platform's impact was immediately apparent during Bambi Baby's annual car seat trade-up event, which draws hundreds of customers over two days. "In years past, because you couldn't check people out quickly enough, the volume in the store was claustrophobic with so many people waiting," explains Josh. "This year, with the platform POS, we never felt overwhelmed because we could keep the line moving. We got 600 people through over the course of two days, and it worked exactly as we wanted with no hiccups."
+
+This improved efficiency has translated into significant business growth. "Our conversion rate is up by 30%," says Josh, as customers no longer abandon purchases due to long checkout lines. "Our average order value is up by 30% too. I think that's just the ability for my team to be able to upsell. We have the time to be with people because we're not spending those minutes writing up orders."
+
+The integrated loyalty program has transformed customer relationships, driving repeat purchases and increasing customer lifetime value. "We're seeing much less 'one and done' transactions. Now they're coming back for some of the smaller items because they know they're going to get to use those points," explains Josh.
+
+Looking ahead, Bambi Baby is positioned for continued retail expansion. "The growth that we've experienced over the last four months we would not have been able to accomplish without the platform and the platform point of sale," says Josh. With the ability to quickly set up new locations by simply shipping down iPads and card readers, they have minimal barriers to launching new stores while maintaining consistent operations across their growing retail footprint.
+
+"At the scale we're growing right now, I don't know how we would have done it without the platform. Everything is managed from one place and it's so trainable—I can teach someone the POS system in 35 minutes. It doesn't slow us down anywhere. It's really instrumental in our growth."
+—Josh Weiss, IT Director, Bambi Baby</div>
+                    </div>
+
+                    <div class="prompt-box">
+                        <div class="prompt-header">
+                            <div class="prompt-title">Action 7: Enter the seventh training prompt</div>
+                            <button class="copy-btn">Copy to clipboard</button>
+                        </div>
+                        <div class="prompt-content">CASE STUDY EXAMPLE 6
+How Omy Laboratoires boosted sales with a redesigned online store
+
+Omy Laboratoires is a Canadian skincare brand founded in 2018 by Rachelle Séguin and Andrea Gomez. The brand offers fully customized face creams and serums made with 100% vegan ingredients. They're recognized as cosmetics industry innovators for their use of artificial intelligence (AI) to analyze customers' skin to provide personalized skincare solutions.
+
+When Omy decided to upgrade their the platform theme to Online Store 2.0, the brand was looking to personalize the customer experience and increase front-end performance. They partnered with ecommerce specialist Novatize to complete the upgrade and improve the website's user experience. Since the upgrade, Omy has seen the following results:
+
+100% uptime since launch and zero major problems
+60% session increase year-over-year
+35% increase in repeat business year-over-year
+95% of sales made through ecommerce
+
+The challenge: Optimizing the online store and reducing data management complexity
+Omy was looking to upgrade their the platform theme to Online Store 2.0, which would unlock faster loading times, dynamic page personalization, and an enhanced brand image. To achieve this, the Canadian skincare brand chose to partner with Novatize, a firm specialized in ecommerce.
+
+Redesigning Omy's product customizer was a major focus of the collaboration. This feature of the website allows customers to create personalized skincare products with ingredients that meet their specific needs. But because Omy had recently changed the nomenclature of their ingredients as part of upgrading their manufacturing process, textures, and fragrances, they had to adapt the methodology for entering information into the brand's product database. This required Novatize to custom build the product customiser with their new platform.
+
+Beyond redesigning the product customizer, Novatize also had to ensure the architecture of the new online store would be highly scalable yet simple enough for the Omy team to manage on their own.
+
+The solution: Optimizing the user experience without adding complexity
+Novatize and Omy worked closely together to design the new online store. The UX and UI design phases included a style guide to integrate all the brand's new assets, product sheets to provide complete transparency to consumers using metafields as product specs, the product customizer to meet the manufacturing processes of the brand, and user journeys focused on personalizing products to customers' unique needs.
+
+The Novatize team then overhauled Omy's database for customizable products, including migrating historical product and client data. Because this customization empowers each customer to order unique products, their new database is now able to handle specific use cases such as when customers want to reorder customized products, review personalized formulas previously registered to their accounts, or continue receiving product subscriptions.
+
+Novatize also ensured that Omy's nomenclature updates didn't impact the user experience on the website. The team crafted a dynamic attributes structure that now allows Omy to evolve their manufacturing process and product offering without compromising what customers see. By implementing a front-end logic tied to editable metafields, Omy now has autonomous capabilities to upgrade their customer experience so it stays aligned with their manufacturing process.
+
+"The Novatize team really cared about the success of the project, and the technological opportunities the platform offers. They managed the project as if it were their own. They went beyond their mandate to ensure that the Omy team had everything in hand to deliver the project on time."
+—Edouard Garceau, Ecommerce Director, Omy Laboratoires
+
+Beyond creating a scalable yet accessible architecture, Omy was able to enhance their brand image. Novatize designed simpler website imagery that gave consumers a better understanding of ingredient customization. The new graphics and techniques help customers easily use the product customizer and place their orders while also facilitating internal operations for the Omy team. For example, the colored labels for each ingredient in the personalized creams help users understand the added value of the customizable product. And because the ingredients are highlighted, this redesign also enables production staff to flow more efficiently.
+
+On the site's front end, Novatize optimized key sections, such as the navigation menu and product sheets for both non-customized and customized products. These new sections have made the purchasing experience more fluid for customers, even if the products have complex characteristics. They also created a consistent site-wide experience, boosting credibility and aligning with the quality of Omy's products.
+
+The results: Rejuvenated website boosts online sales
+The launch of Omy's refreshed online store was a glowing success. Thanks to the preparation and close collaboration between Omy and Novatize, the launch was seamless. Since the redesign, Omy has seen an increase in sessions by 60%, with 95% of sales being made through their ecommerce platform. They've also celebrated a 35% increase in repeat business, alongside an increase in sales related to personalized products and 100% uptime since launch with zero major problems. Clearly, putting customer needs and preferences at the heart of the process paid off.</div>
+                    </div>
+
+                    <div class="prompt-box">
+                        <div class="prompt-header">
+                            <div class="prompt-title">Action 8: Enter the eighth training prompt</div>
+                            <button class="copy-btn">Copy to clipboard</button>
+                        </div>
+                        <div class="prompt-content">## Your Task
+Use this guide to continue developing Partner case studies with the established format, voice, and approach. Each new case study should maintain this consistent structure while adapting to the specific client's industry, challenges, and results.
+
+Next, I'm going to give you information about a new partner and client that we'd like to write a new case study about. Use the relevant information throughout the case study as you see fit to match the voice, tone, style, and formatting of the examples. Do not include any information from the examples in this draft, and do not pull anything from the web. Also do not edit the provided quotes, and instead use them directly.
+
+After taking in this information, you can get to work writing a draft that matches the voice, tone, style, and formatting of the examples, but uses the information provided on the new customer.
+
+Once you're ready, say "My training is now complete! I'm ready to help you draft a new case study. Remember: The more specific information you share, the better the draft will be!
+
+You can input that information now."</div>
+                    </div>
+
+                </div>
+                <div class="navigation-buttons">
+                    <button class="btn btn-secondary" onclick="goToStep('step1')">Back</button>
+                    <button class="btn btn-primary" onclick="goToStep('step3')">Next: Step 3</button>
+                </div>
+            </section>
+
+            <!-- Step 3: Choose your information format -->
+            <section class="step-content" id="step3">
+                <div class="eyebrow-text">Step 3</div>
+                <h2>Choose your information format</h2>
+                <div class="content-area">
+                    <p><strong>The information I have about the client lives:</strong></p>
+                    
+                    <div class="path-selection adventure-grid">
+                        <button class="path-btn" onclick="selectAdventureAndProceed('step4a')">
+                            <h3>📝 In my head</h3>
+                            <p>I'll use a worksheet to organize my thoughts</p>
+                        </button>
+                        <button class="path-btn" onclick="selectAdventureAndProceed('step4b')">
+                                                          <h3>🎤 In an interview transcript</h3>
+                            <p>I'll have a direct conversation with the client and use the transcript</p>
+                        </button>
+                        <button class="path-btn" onclick="selectAdventureAndProceed('step4c')">
+                                                          <h3>♻️ In a case study published on my site</h3>
+                            <p>I'll repurpose existing content</p>
+                        </button>
+                        <button class="path-btn" onclick="selectAdventureAndProceed('step4c')">
+                            <h3>📄 In an existing draft</h3>
+                            <p>I have a draft that needs revision</p>
+                        </button>
+                    </div>
+                </div>
+                <div class="navigation-buttons">
+                    <button class="btn btn-secondary" onclick="goToPreviousStep()">Back</button>
+                </div>
+            </section>
+
+            <!-- Step 4A-4C sections -->
+            <section class="step-content" id="step4a">
+                <div class="eyebrow-text">Step 4</div>
+                <h2>Share the information</h2>
+                <h3>Use a short worksheet</h3>
+                <div class="content-area">
+                    <p>If you know your client by heart, fill out this worksheet with the information that'll be used in the case study.</p>
+
+
+                    <div class="info-box danger" style="color: #8b2635; border-color: #f5c6cb; background-color: #fdf2f2;">
+                        <h4 style="color: #8b2635;">✨ Heads up!</h4>
+                        <p style="font-size: 0.85rem; color: #8b2635;">Your work in this worksheet won't automatically save. If you navigate away from this page or refresh your browser, you'll lose your progress.</p>
+                    </div>
+
+                    <!-- Interactive Worksheet -->
+                    <div class="worksheet-container">
+                        <form id="worksheetForm">
+                            <div class="question-group">
+                                <label for="overall-story">What is the overall story you'd like to tell?</label>
+                                <small>Explain in 2-3 sentences.</small>
+                                <textarea id="overall-story" name="overall-story" rows="3" placeholder="Describe the transformation story you want to highlight..."></textarea>
+                            </div>
+
+                            <div class="question-group">
+                                <label for="describe-client">Describe the client.</label>
+                                <small>What products or services do they provide and what do they care about?</small>
+                                <textarea id="describe-client" name="describe-client" rows="4" placeholder="Tell us about their business, products/services, mission, values..."></textarea>
+                            </div>
+
+                            <div class="question-group">
+                                <label for="describe-partner">Describe yourself as the partner.</label>
+                                <small>What services do you provide and why did this brand choose to work with you as their partner?</small>
+                                <textarea id="describe-partner" name="describe-partner" rows="4" placeholder="Explain your services, expertise, and why they selected you..."></textarea>
+                            </div>
+
+                            <div class="question-group">
+                                <label for="client-challenges">Describe the client's challenges on their previous tech stack.</label>
+                                <small>Why did they choose the new solution?</small>
+                                <textarea id="client-challenges" name="client-challenges" rows="4" placeholder="Detail their previous platform limitations, pain points, and motivation to change..."></textarea>
+                            </div>
+
+                            <div class="question-group">
+                                <label for="challenges-quote">Provide a direct quote from the client about the challenges they've faced.</label>
+                                <textarea id="challenges-quote" name="challenges-quote" rows="3" placeholder="Include the exact quote with quotation marks and attribution..."></textarea>
+                            </div>
+
+                            <div class="question-group">
+                                <label for="solution-value">Describe the value of moving with the new solution.</label>
+                                <small>What features or capabilities did the client gain in moving with the new solution? How did you help them implement these features? What are they now able to achieve that they previously couldn't?</small>
+                                <textarea id="solution-value" name="solution-value" rows="5" placeholder="Detail the specific capabilities, implementation process, and new possibilities..."></textarea>
+                            </div>
+
+                            <div class="question-group">
+                                <label for="solution-quote">Provide a direct quote about the solution approach or implementation from either the client or yourself as the partner.</label>
+                                <textarea id="solution-quote" name="solution-quote" rows="3" placeholder="Include the exact quote with quotation marks and attribution..."></textarea>
+                            </div>
+
+                            <div class="question-group">
+                                <label for="results">Describe the results of moving with the new solution.</label>
+                                <small>What were the main outcomes of moving with the new solution?</small>
+                                <textarea id="results" name="results" rows="4" placeholder="Detail the business outcomes, performance improvements, growth metrics..."></textarea>
+                            </div>
+
+                            <div class="question-group">
+                                <label for="partnership-outcomes">Describe the outcomes of your partnership.</label>
+                                <small>What aspect of your partnership do the client valued the most? What future plans do you have with this client to continue their growth?</small>
+                                <textarea id="partnership-outcomes" name="partnership-outcomes" rows="4" placeholder="Highlight the key benefits and value your partnership provided, and describe any future plans..."></textarea>
+                            </div>
+
+
+                            <div class="question-group">
+                                <label for="results-quote">Provide a direct quote from the client about results and business impact.</label>
+                                <textarea id="results-quote" name="results-quote" rows="3" placeholder="Include the exact quote with quotation marks and attribution..."></textarea>
+                            </div>
+
+                            <div class="question-group">
+                                <label for="success-metrics">Please share 1-3 quantifiable success metrics related to the impacts you described above that we can include in the case study.</label>
+                                <small>Examples: 45% faster launch for new features, 3x increase in conversion rate, 15% increase in average order value</small>
+                                <textarea id="success-metrics" name="success-metrics" rows="4" placeholder="List specific metrics with percentages, timeframes, or concrete numbers..."></textarea>
+                            </div>
+
+                            <div class="worksheet-actions">
+                                <button type="button" class="btn btn-primary" onclick="generateWorksheetOutput()">Generate AI input</button>
+                                <button type="button" class="btn btn-secondary" onclick="clearWorksheet()">Clear all</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Generated Output -->
+                    <div id="worksheetOutput" class="prompt-box" style="display: none; margin-top: 2rem;">
+                        <div class="prompt-header">
+                            <div class="prompt-title">Your worksheet formatted as an AI input</div>
+                            <button class="copy-btn" onclick="copyWorksheetOutput()">Copy to clipboard</button>
+                        </div>
+                        <div class="prompt-content" id="worksheetOutputContent"></div>
+                    </div>
+
+
+                </div>
+                <div class="navigation-buttons">
+                    <button class="btn btn-secondary" onclick="goToStep('step3')">Back</button>
+                    <button class="btn btn-primary" onclick="goToStep('step5')">Next: Step 5</button>
+                </div>
+            </section>
+
+            <section class="step-content" id="step4b">
+                <div class="eyebrow-text">Step 4</div>
+                <h2>Share the information</h2>
+                <h3>Interview the client</h3>
+                <div class="content-area">
+                    <p>Conducting an interview with a client is the best way to gather information, uncover insights, and add a bit of humanity to your case study.</p>
+
+
+                    <div style="background: #f8f9fa; border: 1px solid #e9ecef; border-radius: 8px; padding: 2rem; margin: 1.5rem 0;">
+                        <div class="prompt-title">Step 1: Draft questions and interview your client</div>
+                        <p style="margin: 1rem 0; font-size: 0.9rem; font-style: italic; color: #666;">🔴 Remember to record your interview!</p>
+                        <a href="https://content.shopify.com/i/Id7lDIbYsjtHKter3tOCeXyND1suM1H7alZrBbKZZ0UNfu1av0vuDWwum8t8GiCG6BEITwPLUSSIGNO6hVj0IBBJo4Pvz1bNns0H0ToICLnOWkfHaBzkx___Gd0DW2xSAQqIXPaSc" target="_blank" style="display: inline-block; background-color: #f8c2d4; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 1rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-top: 1rem;">
+                            📄 Download interview question template
+                        </a>
+                    </div>
+
+                    <div class="prompt-box">
+                        <div class="prompt-header">
+                            <div class="prompt-title">Step 2: Input this additional training prompt</div>
+                            <button class="copy-btn">Copy to clipboard</button>
+                        </div>
+                        <div class="prompt-content">I'm now going to give you information about a new partner that we'd like to write a case study about. I'll provide a transcript as an overview. I'll also give you an overview of the story we'd like to capture. As you pull quotes from the transcript, quote them directly. When you understand this, say, "I'm ready for the transcript!"</div>
+                    </div>
+
+                    <div style="background: #f8f9fa; border: 1px solid #e9ecef; border-radius: 8px; padding: 2rem; margin: 1.5rem 0;">
+                        <div class="prompt-title">Step 3: Input the interview transcript into your AI tool</div>
+                    </div>
+
+                </div>
+                <div class="navigation-buttons">
+                    <button class="btn btn-secondary" onclick="goToStep('step3')">Back</button>
+                    <button class="btn btn-primary" onclick="goToStep('step5')">Next: Step 5</button>
+                </div>
+            </section>
+
+            <section class="step-content" id="step4c">
+                <div class="eyebrow-text">Step 4</div>
+                <h2>Share the information</h2>
+                <h3>Repurpose an existing draft or a case study published on your site</h3>
+                <div class="content-area">
+                    <div class="prompt-box">
+                        <div class="prompt-header">
+                            <div class="prompt-title">Action 1: Input this additional training prompt</div>
+                            <button class="copy-btn">Copy to clipboard</button>
+                        </div>
+                        <div class="prompt-content">The informational inputs I'm going to provide next may look like they're in the form of a case study. Ignore this formatting, structure, voice, and tone, and instead follow the examples and template I provided earlier. Simply use the information from the upcoming input as raw material for your draft.
+
+When you understand this, say, "I'm ready to help repurpose your existing case study draft!"</div>
+                    </div>
+
+                    <div style="background: #f8f9fa; border: 1px solid #e9ecef; border-radius: 8px; padding: 2rem; margin: 1.5rem 0;">
+                        <div class="prompt-title">Action 2: Copy and paste your existing content into your AI tool</div>
+                    </div>
+
+                </div>
+                <div class="navigation-buttons">
+                    <button class="btn btn-secondary" onclick="goToPreviousStep()">Back</button>
+                    <button class="btn btn-primary" onclick="goToStep('step5')">Next: Step 5</button>
+                </div>
+            </section>
+
+            <!-- Step 5: Check Details -->
+            <section class="step-content" id="step5">
+                <div class="eyebrow-text">Step 5</div>
+                <h2>Check for the details</h2>
+                <div class="content-area">
+                    <p>You've generated a draft! Now let's make sure it has all of the elements that make for a great the platform case study.</p>
+
+
+                    <div class="prompt-box">
+                        <div class="prompt-header">
+                            <div class="prompt-title">Action 1: Input this quality assessment prompt</div>
+                            <button class="copy-btn">Copy to clipboard</button>
+                        </div>
+                        <div class="prompt-content">You are now an editor with expertise in the platform's platform capabilities and partner program. Your task is to thoroughly review the drafted case study for detailed information about how this partner worked with the client to grow their business with their new platform. Often, these case studies come to you with missing information, and it's your job to identify where more information is needed.
+
+Please evaluate the case study draft you just generated against the following criteria and flag any issues:
+
+1. THE INTRO
+Verify that the introduction contains information about the client including:
+The products or services they provide
+What they care about as a brand
+When they were founded
+A clear statement of challenges they faced
+Why they chose to work with the partner
+Three clear metrics that each contain a number
+
+2. THE CHALLENGE
+Verify that the section with "The challenge:" in the header contains information on:
+A clear description of the challenges the client faced before they migrated with the new solution
+Why each challenge was important to solve
+A direct quote from the partner or client that relates to the challenges
+Why they chose the platform to address these challenges
+
+3. THE SOLUTION
+Verify that the section with "The solution:" contains information on:
+The features or capabilities the client gained in moving with the new solution
+How the partner helped implement these features
+What these features allow the client to achieve that they previously couldn't
+A direct quote about solution approach or implementation from the client or the partner
+
+4. THE RESULTS
+Verify that the section with "The results:" contains information on:
+A description of the main outcomes of moving with the new solution
+A description of my the client values the partner
+A description of future plans the client and partner have to continue their growth
+A direct quote from the client about results and business impact
+
+OUTPUT FORMAT
+For each section of the verification checklist, provide your assessment in this format:
+[Section Name]: ✓ (Looks good!) or ❌ (more detail needed)
+Output the text associated with the bullet in each section. For example, if "The challenge" section needs more information on why each challenge was important to solve, output: "❌ (more detail needed): Why each challenge was important to solve"
+Reference specific text from the case study to point to where more detail is needed
+If no issues are found in a section, simply mark it as complete.
+
+At the end, provide an overall assessment:
+ALL CLEAR: Case study has a satisfactory level of detail and includes all required story elements.
+NEEDS REVISION: Case study is lacking detail in some areas that should be addressed.
+SIGNIFICANT ISSUES: Case study lacks required components (metrics and/or quotes) and needs substantial revision.
+Include a summary of the areas with most information missing if any are found.
+
+If the overall assessment is either NEEDS REVISION or SIGNIFICANT ISSUES, also say: "Above are some areas where we suggest adding more information. Following the recommendations listed in the overall assessment, provide this additional information (as either bullets or sentences) to update the draft.
+
+You can free-type the responses to these required improvement areas. The AI tool will give feedback on what information feels satisfactory and where you still need to provide more details."
+
+Once they have provided all the necessary additional information, draft a revised case study that incorporates these new inputs.</div>
+                    </div>
+
+                    <div class="info-box success" style="background: #fef7fb; border: 1px solid #f0c4d8; color: #d47ba8;">
+                        <h4 style="color: #d47ba8;">📝 Adding missing information</h4>
+                        <p>After you run this prompt, you may be asked to add more information. Follow your AI tool's suggestions. The tool will create a new draft once you provide the needed information. You may need to repeat this process a few times!</p>
+                        <p style="font-weight: bold; font-size: 1.1rem; margin-top: 1rem; padding: 0.5rem; background: #f0c4d8; border-radius: 4px; text-align: center;">✅ Once you receive an "All clear!" from the quality assessment, you can move to the last step.</p>
+                    </div>
+
+
+                </div>
+                <div class="navigation-buttons">
+                    <button class="btn btn-secondary" onclick="goToPreviousStep()">Back</button>
+                    <button class="btn btn-primary" onclick="goToStep('step6')">Next: Step 6</button>
+                </div>
+            </section>
+
+            <!-- Step 6: Edit Draft -->
+            <section class="step-content" id="step6">
+                <div class="eyebrow-text">Step 6</div>
+                <h2>Review your draft (as a human)</h2>
+                <div class="content-area">
+                    <p>The purpose of reviewing your draft is twofold: to check for accuracy and to make it the best it can be. We recommend:</p>
+
+                    <ul style="margin: 1.5rem 0; padding-left: 1.5rem;">
+                        <li style="margin-bottom: 1rem;"><strong>Check (and double check!) the accuracy of the outputs.</strong> AI is a great tool, but it has a tendency to hallucinate, especially when it's not given enough information.</li>
+                        <li style="margin-bottom: 1rem;"><strong>Put your human abilities to work.</strong> While the outputs of these prompts act as a strong starting point, they're not perfect. Still put a dedicated effort into revising and shaping your case study into a story you feel proud of.</li>
+                    </ul>
+
+                    <div class="completion-box" style="background: #fef7fb; border: 2px solid #f8c2d4; border-radius: 8px; padding: 1.5rem; margin: 2rem 0; box-shadow: 0 2px 8px rgba(248, 194, 212, 0.2);">
+                        <h4 style="color: #d47ba8; margin-bottom: 1rem; font-size: 1.2rem;">🎉 There you have it!</h4>
+                        <p style="color: #d47ba8; margin-bottom: 1rem; line-height: 1.6;">You've now created a solid first draft for a case study. At this point, spend time revising it to reflect the voice, tone, and style of your agency's brand. From there, you can work on publishing to your surfaces and promoting through social channels.</p>
+                        <p style="color: #d47ba8; margin: 0; font-weight: 600; line-height: 1.6;"><strong>⚠️ Remember:</strong> always get your client's approval before publishing anything about them.</p>
+                    </div>
+
+                </div>
+                <div class="navigation-buttons">
+                    <button class="btn btn-secondary" onclick="goToStep('step5')">Back</button>
+                    <button class="btn btn-primary" onclick="resetGuide()">Start over</button>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+
+
+    <!-- Sliding Sidebar for Step 3 -->
+    <div class="sliding-sidebar" id="step3Sidebar" onclick="toggleStep3Sidebar()" style="position: fixed; top: 50%; right: 0px; transform: translateY(-50%); width: 300px; background: #fef7fb; border: 1px solid #f0c4d8; border-radius: 8px 0 0 8px; padding: 1.5rem; box-shadow: -4px 0 12px rgba(0,0,0,0.1); transition: right 0.4s ease; z-index: 1000; cursor: pointer;">
+        <div style="position: absolute; top: 10px; left: 15px; color: #d47ba8; font-size: 1.2rem;" id="step3Toggle">▶</div>
+        <div class="sidebar-content">
+            <p style="color: #d47ba8; font-size: 0.9rem; line-height: 1.4; margin-left: 30px;">Now it's time to input the new information about the client you want to write a case study about.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
